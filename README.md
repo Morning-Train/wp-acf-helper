@@ -43,6 +43,8 @@ To add a foldere where ACF should look for JSON field groups
 To use the added JSON folder as the folder where ACF use the `useAsSaveFolder` method on the returned `JsonPath` objetct.
 You can optionally set a namespace, which is used to force saving in specific folder if more than one project sets a save folder.
 
+*OBS: ACF will not create the folder, so it shall exist before ACF saves in the folder.*
+
 ```php
 // Add folder to look for JSON files in ./resources/acf-fields and use it as save folder
 \Morningtrain\WP\ACF\ACF::registerJsonFolder(__DIR__ . '/resources/acf-fields')->useAsSaveFolder('some_namespace');
