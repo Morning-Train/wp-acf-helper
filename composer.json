@@ -3,7 +3,7 @@
     "description": "Use ACF in project",
     "minimum-stability": "stable",
     "license": "proprietary",
-    "version": "v0.1.0",
+    "version": "v0.1.1",
     "authors": [
         {
             "name": "Martin Schadegg Brønniche",
