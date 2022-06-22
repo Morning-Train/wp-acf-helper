@@ -33,6 +33,7 @@ class JsonPath {
 
     /**
      * Use this folder as the folder where JSON files are saved when editing in the admin area. Will not set if ACF_SAVE_FOLDER is defined and not set to the specified namespace
+     * Will not automatically create the folder, so the folder shall exist.
      * @param string $namespace A namespace used for defining which folder should be the one where files are saved. Defaults to 'default'.
      * @return void
      */
