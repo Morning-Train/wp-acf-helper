@@ -8,7 +8,7 @@ class JsonPath {
      * Construct json path and load ACF json files from the specified path
      * @param string $path Full path to the folder
      */
-    public function __construct(private readonly string $path)
+    public function __construct(private string $path)
     {
         add_filter('acf/settings/load_json', [$this, 'loadJsonHook']);
     }
