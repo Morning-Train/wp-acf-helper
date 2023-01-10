@@ -41,7 +41,7 @@ class JsonPath {
     {
         $this->namespace = $namespace;
 
-        add_filter('acf/settings/save_json', [$this, 'saveJsonHook']);
+        add_filter('acf/settings/save_json', [$this, 'saveJsonHook'], 99); // 99 to overwrite normal implementation of this filter
     }
 
     /**
