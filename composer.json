@@ -1,9 +1,8 @@
 {
-    "name": "morningtrain/wp-acf",
-    "description": "Use ACF in project",
-    "minimum-stability": "stable",
-    "license": "proprietary",
-    "version": "v0.1.1",
+    "name": "morningtrain/wp-acf-helper",
+    "description": "ACF helpers to WordPress",
+    "minimum-stability": "dev",
+    "license": "MIT",
     "authors": [
         {
             "name": "Martin Schadegg Brønniche",
@@ -12,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Morningtrain\\WP\\ACF\\": "src/"
+            "Morningtrain\\WP\\ACFHelper\\": "src/"
         }
     }
 }

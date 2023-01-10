@@ -1,8 +1,8 @@
-<?php namespace Morningtrain\WP\ACF;
+<?php namespace Morningtrain\WP\ACFHelper;
 
-use Morningtrain\WP\ACF\Classes\JsonPath;
+use Morningtrain\WP\ACFHelper\Classes\JsonPath;
 
-class ACF {
+class ACFHelper {
 
     /**
      * Register af folder where ACF should look for ACF JSON files.
@@ -15,16 +15,26 @@ class ACF {
     }
 
     /**
-     * Hide the admin interface. Will not hide if WP_ENVIRONMENT_TYPE is set to 'local'.
+     * Hide the admin interface.
      * @return void
      */
     public static function hideAdmin(): void
     {
-        if(wp_get_environment_type() === 'local') {
+        add_filter( 'acf/settings/show_admin', '__return_false' );
+    }
+
+    /**
+     * Hide the admin interface except on specific environments set by the WP_ENVIRONMENT_TYPE constant
+     * @param array|string $environments local, development, staging or production
+     * @return void
+     */
+    public static function hideAdminExceptOn(array|string $environments = 'local'): void
+    {
+        if(in_array(wp_get_environment_type(), (array) $environments)) {
             return;
         }
 
-        add_filter( 'acf/settings/show_admin', '__return_false' );
+        static::hideAdmin();
     }
 
     /**
@@ -34,15 +44,5 @@ class ACF {
     public static function isACFActivated(): bool
     {
         return function_exists('ACF');
-    }
-
-    /**
-     * :construction: WIP: Display admin notice if ACF is not activated
-     * @return void
-     */
-    public static function displayACFRequiredAdminNotice() {
-        if(static::isACFActivated()) {
-            return;
-        }
     }
 }
