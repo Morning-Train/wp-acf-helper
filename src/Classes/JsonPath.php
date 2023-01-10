@@ -1,4 +1,4 @@
-<?php namespace Morningtrain\WP\ACF\Classes;
+<?php namespace Morningtrain\WP\ACFHelper\Classes;
 
 class JsonPath {
 
